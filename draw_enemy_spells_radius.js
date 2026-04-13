@@ -101,7 +101,6 @@ MyScript.OnUpdate = () => {
   }
 
   Panorama_Ability_Array.forEach((panel, i) => {
-    print(panel);
 
     if (panel && panel.IsValid()) {
       let pos = panel.GetPosition();
@@ -124,7 +123,6 @@ MyScript.OnUpdate = () => {
       let h = Panorama_Ability_Array_pos_size[i + 3];
 
       let IsHovering = Input.IsCursorInRect(x, y, w, h);
-      print({ IsHovering });
 
       if (IsHovering && Input.IsKeyDownOnce(Enum.ButtonCode.MOUSE_MIDDLE)) {
         const spell = Selected_Enemy_Spells_list_Displayed[i / 4];
@@ -168,8 +166,6 @@ MyScript.OnUpdate = () => {
     }
   }
 
-  print(Selected_Enemy);
-  print(Selected_Enemy_Spells_list_Displayed.length);
 };
 
 MyScript.OnKeyEvent = event => {
@@ -241,7 +237,6 @@ MyScript.OnDraw = () => {
 // Регистрируем скрипт — это ОБЯЗАТЕЛЬНО!
 RegisterScript(MyScript, 'draw spell radius');
 
-// нейросетевое
 Ability.prototype.IsInnate = function () {
   const innateStartLevel = this.GetAbilityDefinitionProperty('AbilityInnateStartLevel');
   if (innateStartLevel !== null && innateStartLevel !== undefined) {
